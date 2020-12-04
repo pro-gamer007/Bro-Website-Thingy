@@ -43,13 +43,17 @@ def my_link():
     def switch1_On():
       # Set socket encoder pins to 0111
       GPIO.output(11, False)
+      print('got till line 45')
       GPIO.output(15, True)
+      print('got till line 48')
       GPIO.output(16, True)
       GPIO.output(13, True)
+      print('got till line 51')
       time.sleep(0.1)
       GPIO.output(22, True) # Enable Modulator
       time.sleep(0.25)
       GPIO.output(22, False) # Disable Modulator
+      print('worked!')
 
     return 'Turned on?'
 if __name__ == '__main__':
