@@ -78,12 +78,9 @@ def switch1_On():
     GPIO.output (13, False)
     print('YOY I GOT CLICKED')
     GPIO.output(11, False)
-    print('got till line 45')
     GPIO.output(15, True)
-    print('got till line 48')
     GPIO.output(16, True)
     GPIO.output(13, True)
-    print('got till line 51')
     time.sleep(0.1)
     GPIO.output(22, True) # Enable Modulator
     time.sleep(0.25)
