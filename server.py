@@ -94,6 +94,17 @@ def switch2_On():
       print("Turning Switch2 ON" + "\n")
     # Set socket encoder pins to 1111
 GPIO.setmode(GPIO.BOARD)
+# Select the GPIO pins used for the encoder K0-K3 data inputs
+GPIO.setup(11, GPIO.OUT)
+GPIO.setup(15, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
+
+    # Select the signal to select ASK/FSK
+GPIO.setup(18, GPIO.OUT)
+
+    # Select the signal used to enable/disable the modulator
+GPIO.setup(22, GPIO.OUT)
 GPIO.output(11, True)
 GPIO.output(15, True)
 GPIO.output(16, True)
@@ -107,6 +118,17 @@ def switch1_Off():
     print("Turning Switch OFF" + "\n")
     # Set socket encoder pins to 0110
     GPIO.setmode(GPIO.BOARD)
+    # Select the GPIO pins used for the encoder K0-K3 data inputs
+    GPIO.setup(11, GPIO.OUT)
+    GPIO.setup(15, GPIO.OUT)
+    GPIO.setup(16, GPIO.OUT)
+    GPIO.setup(13, GPIO.OUT)
+
+    # Select the signal to select ASK/FSK
+    GPIO.setup(18, GPIO.OUT)
+
+    # Select the signal used to enable/disable the modulator
+    GPIO.setup(22, GPIO.OUT)
     GPIO.output(11, False)
     GPIO.output(15, True)
     GPIO.output(16, True)
