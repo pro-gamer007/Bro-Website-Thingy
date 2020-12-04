@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
   return render_template('index.html')
+  
 @app.route('/off/')
 def switch1_Off():
     # set the pins numbering mode
@@ -87,18 +88,19 @@ def switch1_On():
     GPIO.output(22, False) # Disable Modulator
     print('worked!')
     return render_template('on.html')
-    @app.route('/ontwo/')
-    def switch2_On():
+
+@app.route('/ontwo/')
+def switch2_On():
       print("Turning Switch2 ON" + "\n")
     # Set socket encoder pins to 1111
-    GPIO.output(11, True)
-    GPIO.output(15, True)
-    GPIO.output(16, True)
-    GPIO.output(13, True)
-    time.sleep(0.1)
-    GPIO.output(22, True) # Enable Modulator
-    time.sleep(0.25)
-    GPIO.output(22, False) # Disable Modulator
+GPIO.output(11, True)
+GPIO.output(15, True)
+GPIO.output(16, True)
+GPIO.output(13, True)
+time.sleep(0.1)
+GPIO.output(22, True) # Enable Modulator
+time.sleep(0.25)
+GPIO.output(22, False) # Disable Modulator
 @app.route('/offtwo/')
 def switch1_Off():
     print("Turning Switch OFF" + "\n")
