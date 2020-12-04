@@ -2,9 +2,14 @@ from flask import Flask, render_template
 import RPi.GPIO as GPIO
 import time
 app = Flask(__name__)
-## stuff idk yet lmaoo
-def init_pins():
-    # set the pins numbering mode
+
+@app.route('/')
+def index():
+  return render_template('index.html')
+
+@app.route('/my-link/')
+def switch1_On():
+  # set the pins numbering mode
     GPIO.setmode(GPIO.BOARD)
 
     # Select the GPIO pins used for the encoder K0-K3 data inputs
@@ -31,13 +36,6 @@ def init_pins():
     GPIO.output (15, False)
     GPIO.output (16, False)
     GPIO.output (13, False)
-
-@app.route('/')
-def index():
-  return render_template('index.html')
-
-@app.route('/my-link/')
-def my_link():
     print('YOY I GOT CLICKED')
     GPIO.output(11, False)
     print('got till line 45')
