@@ -115,7 +115,7 @@ def switch2_On():
   GPIO.output(22, False) # Disable Modulator
   return('moment')
 @app.route('/offtwo/')
-def switch1_Off():
+def switch2_Off():
     print("Turning Switch OFF" + "\n")
     # Set socket encoder pins to 0110
     GPIO.setmode(GPIO.BOARD)
@@ -130,7 +130,9 @@ def switch1_Off():
 
     # Select the signal used to enable/disable the modulator
     GPIO.setup(22, GPIO.OUT)
-    GPIO.output(11, False)
+    print("Turning Switch2 OFF" + "\n")
+    # Set socket encoder pins to 1110
+    GPIO.output(11, True)
     GPIO.output(15, True)
     GPIO.output(16, True)
     GPIO.output(13, False)
