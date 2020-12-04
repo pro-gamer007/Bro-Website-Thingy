@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import RPi.GPIO as GPIO
+import time
 app = Flask(__name__)
 ## stuff idk yet lmaoo
 def init_pins():
@@ -40,15 +41,15 @@ def my_link():
     print('YOY I GOT CLICKED')
     # do the shit lmfao aka turn on
     def switch1_On():
-    # Set socket encoder pins to 0111
-    GPIO.output(11, False)
-    GPIO.output(15, True)
-    GPIO.output(16, True)
-    GPIO.output(13, True)
-    time.sleep(0.1)
-    GPIO.output(22, True) # Enable Modulator
-    time.sleep(0.25)
-    GPIO.output(22, False) # Disable Modulator
+      # Set socket encoder pins to 0111
+      GPIO.output(11, False)
+      GPIO.output(15, True)
+      GPIO.output(16, True)
+      GPIO.output(13, True)
+      time.sleep(0.1)
+      GPIO.output(22, True) # Enable Modulator
+      time.sleep(0.25)
+      GPIO.output(22, False) # Disable Modulator
 
     return 'Turned on?'
 if __name__ == '__main__':
