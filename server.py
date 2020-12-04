@@ -38,24 +38,20 @@ def index():
 
 @app.route('/my-link/')
 def my_link():
-      # do the shit lmfao aka turn on
-    def switch1_On():
-      # Set socket encoder pins to 0111
-      GPIO.output(11, False)
-      print('got till line 45')
-      GPIO.output(15, True)
-      print('got till line 48')
-      GPIO.output(16, True)
-      GPIO.output(13, True)
-      print('got till line 51')
-      time.sleep(0.1)
-      GPIO.output(22, True) # Enable Modulator
-      time.sleep(0.25)
-      GPIO.output(22, False) # Disable Modulator
-      print('worked!')
-
     print('YOY I GOT CLICKED')
+    GPIO.output(11, False)
+    print('got till line 45')
+    GPIO.output(15, True)
+    print('got till line 48')
+    GPIO.output(16, True)
+    GPIO.output(13, True)
+    print('got till line 51')
+    time.sleep(0.1)
+    GPIO.output(22, True) # Enable Modulator
+    time.sleep(0.25)
+    GPIO.output(22, False) # Disable Modulator
+    print('worked!')
 
     return 'Turned on?'
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
