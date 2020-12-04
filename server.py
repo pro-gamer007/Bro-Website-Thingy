@@ -51,7 +51,6 @@ def my_link():
     time.sleep(0.25)
     GPIO.output(22, False) # Disable Modulator
     print('worked!')
-
     return 'Turned on?'
 if __name__ == '__main__':
     app.run(debug=False)
