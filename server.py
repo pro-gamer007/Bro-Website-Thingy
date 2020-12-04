@@ -45,7 +45,7 @@ def switch1_Off():
     GPIO.output(22, True) # Enable Modulator
     time.sleep(0.25)
     GPIO.output(22, False) # Disable Modulator
-    return 'Turned off?'
+    return render_template('off.html')
 
 @app.route('/on/')
 def switch1_On():
@@ -89,6 +89,6 @@ def switch1_On():
     time.sleep(0.25)
     GPIO.output(22, False) # Disable Modulator
     print('worked!')
-    return 'Turned on?'
+    return render_template('on.html')
 if __name__ == '__main__':
     app.run(debug=False)
