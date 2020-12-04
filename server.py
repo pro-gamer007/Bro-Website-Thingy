@@ -87,7 +87,7 @@ def switch1_On():
     GPIO.output(22, False) # Disable Modulator
     print('worked!')
     return render_template('on.html')
-    @app.route('/on2/')
+    @app.route('/ontwo/')
     def switch2_On():
       print("Turning Switch2 ON" + "\n")
     # Set socket encoder pins to 1111
@@ -99,7 +99,7 @@ def switch1_On():
     GPIO.output(22, True) # Enable Modulator
     time.sleep(0.25)
     GPIO.output(22, False) # Disable Modulator
-@app.route('/off2/')
+@app.route('/offtwo/')
 def switch1_Off():
     print("Turning Switch OFF" + "\n")
     # Set socket encoder pins to 0110
