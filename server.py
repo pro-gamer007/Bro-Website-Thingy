@@ -38,8 +38,7 @@ def index():
 
 @app.route('/my-link/')
 def my_link():
-    print('YOY I GOT CLICKED')
-    # do the shit lmfao aka turn on
+      # do the shit lmfao aka turn on
     def switch1_On():
       # Set socket encoder pins to 0111
       GPIO.output(11, False)
@@ -54,6 +53,8 @@ def my_link():
       time.sleep(0.25)
       GPIO.output(22, False) # Disable Modulator
       print('worked!')
+
+    print('YOY I GOT CLICKED')
 
     return 'Turned on?'
 if __name__ == '__main__':
