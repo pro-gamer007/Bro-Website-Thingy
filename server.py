@@ -88,4 +88,4 @@ def switch1_On():
     print('worked!')
     return render_template('on.html')
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, host='0.0.0.0')
