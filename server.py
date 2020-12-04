@@ -88,58 +88,5 @@ def switch1_On():
     GPIO.output(22, False) # Disable Modulator
     print('worked!')
     return render_template('on.html')
-
-@app.route('/ontwo/')
-def switch2_On():
-  print("Turning Switch2 ON" + "\n")
-      # Set socket encoder pins to 1111
-  GPIO.setmode(GPIO.BOARD)
-  # Select the GPIO pins used for the encoder K0-K3 data inputs
-  GPIO.setup(11, GPIO.OUT)
-  GPIO.setup(15, GPIO.OUT)
-  GPIO.setup(16, GPIO.OUT)
-  GPIO.setup(13, GPIO.OUT)
-
-      # Select the signal to select ASK/FSK
-  GPIO.setup(18, GPIO.OUT)
-
-      # Select the signal used to enable/disable the modulator
-  GPIO.setup(22, GPIO.OUT)
-  GPIO.output(11, True)
-  GPIO.output(15, True)
-  GPIO.output(16, True)
-  GPIO.output(13, True)
-  time.sleep(0.1)
-  GPIO.output(22, True) # Enable Modulator
-  time.sleep(0.25)
-  GPIO.output(22, False) # Disable Modulator
-  return('moment')
-@app.route('/offtwo/')
-def switch2_Off():
-    print("Turning Switch OFF" + "\n")
-    # Set socket encoder pins to 0110
-    GPIO.setmode(GPIO.BOARD)
-    # Select the GPIO pins used for the encoder K0-K3 data inputs
-    GPIO.setup(11, GPIO.OUT)
-    GPIO.setup(15, GPIO.OUT)
-    GPIO.setup(16, GPIO.OUT)
-    GPIO.setup(13, GPIO.OUT)
-
-    # Select the signal to select ASK/FSK
-    GPIO.setup(18, GPIO.OUT)
-
-    # Select the signal used to enable/disable the modulator
-    GPIO.setup(22, GPIO.OUT)
-    print("Turning Switch2 OFF" + "\n")
-    # Set socket encoder pins to 1110
-    GPIO.output(11, True)
-    GPIO.output(15, True)
-    GPIO.output(16, True)
-    GPIO.output(13, False)
-    time.sleep(0.1)
-    GPIO.output(22, True) # Enable Modulator
-    time.sleep(0.25)
-    GPIO.output(22, False) # Disable Modulator
-    return('moment')
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
