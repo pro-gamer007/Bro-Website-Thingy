@@ -77,7 +77,6 @@ def switch1_On():
     GPIO.output (15, False)
     GPIO.output (16, False)
     GPIO.output (13, False)
-    print('YOY I GOT CLICKED')
     GPIO.output(11, False)
     GPIO.output(15, True)
     GPIO.output(16, True)
@@ -86,7 +85,7 @@ def switch1_On():
     GPIO.output(22, True) # Enable Modulator
     time.sleep(0.25)
     GPIO.output(22, False) # Disable Modulator
-    print('worked!')
+    print('Turning switch 1 on!')
     return render_template('on.html')
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
